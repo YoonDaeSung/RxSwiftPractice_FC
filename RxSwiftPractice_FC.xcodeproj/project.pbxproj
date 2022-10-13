@@ -28,6 +28,8 @@
 		6B7E9CEF28F40FA600252ED5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B7E9CF528F4115600252ED5 /* Observable.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Observable.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		6BC9B91128F64A0F00354E6A /* Traits.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Traits.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		6BC9B91228F7A5FC00354E6A /* Subject.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Subject.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		6BC9B91428F7E98400354E6A /* FilteringOperators.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = FilteringOperators.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		8ECB80712CB2ED6C3B0FC9A0 /* Pods-RxSwiftPractice_FC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftPractice_FC.release.xcconfig"; path = "Target Support Files/Pods-RxSwiftPractice_FC/Pods-RxSwiftPractice_FC.release.xcconfig"; sourceTree = "<group>"; };
 		AACDB0ED0A35362ED875D335 /* Pods-RxSwiftPractice_FC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftPractice_FC.debug.xcconfig"; path = "Target Support Files/Pods-RxSwiftPractice_FC/Pods-RxSwiftPractice_FC.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -49,6 +51,8 @@
 			children = (
 				6B7E9CF528F4115600252ED5 /* Observable.playground */,
 				6BC9B91128F64A0F00354E6A /* Traits.playground */,
+				6BC9B91228F7A5FC00354E6A /* Subject.playground */,
+				6BC9B91428F7E98400354E6A /* FilteringOperators.playground */,
 				6B7E9CE028F40FA500252ED5 /* RxSwiftPractice_FC */,
 				6B7E9CDF28F40FA500252ED5 /* Products */,
 				9E609CB752D955889D02E29E /* Pods */,
