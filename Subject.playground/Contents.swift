@@ -41,7 +41,6 @@ publishSubject.onNext("6찍힐까요?")
 
 // behaviorSubject는 반드시 초기값을 갖고 시작함
 // 구독한 시점의 직전 이벤트도 방출함 (publishSubject는 구독한 시점부터 이벤트 방출)
-//
 print("------BehaviorSubject------")
 enum SubjectError: Error {
     case error1
