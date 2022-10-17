@@ -5,9 +5,6 @@
       location = "group:RxSwiftPractice_FC.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Observable.playground">
-   </FileRef>
-   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>

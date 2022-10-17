@@ -26,7 +26,7 @@
 		6B7E9CEA28F40FA600252ED5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B7E9CED28F40FA600252ED5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6B7E9CEF28F40FA600252ED5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6B7E9CF528F4115600252ED5 /* Observable.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Observable.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		6B7E9CF628FD806700252ED5 /* Observable.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Observable.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		6BC9B91128F64A0F00354E6A /* Traits.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Traits.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		6BC9B91228F7A5FC00354E6A /* Subject.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Subject.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		6BC9B91428F7E98400354E6A /* FilteringOperators.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = FilteringOperators.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -50,7 +50,7 @@
 		6B7E9CD528F40FA500252ED5 = {
 			isa = PBXGroup;
 			children = (
-				6B7E9CF528F4115600252ED5 /* Observable.playground */,
+				6B7E9CF628FD806700252ED5 /* Observable.playground */,
 				6BC9B91128F64A0F00354E6A /* Traits.playground */,
 				6BC9B91228F7A5FC00354E6A /* Subject.playground */,
 				6BC9B91428F7E98400354E6A /* FilteringOperators.playground */,

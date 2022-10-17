@@ -74,7 +74,7 @@ Observable.empty()
 	.subscribe(onNext: {
 		
 	},
-  onCompleted: {
+	onCompleted: {
 		print("Completed!")
 	}
 )
@@ -83,22 +83,22 @@ Observable.empty()
 // 코드가 잘동작되는지 확인은 debug연산을 통해 확인가능
 print("------never------")
 Observable<Void>.never()
-    .debug("never debug")
-    .subscribe(
-        onNext: {
-            print($0)
-        },
-        onCompleted: {
-            print("Completed!")
-        }
-    )
+		.debug("never debug")
+		.subscribe(
+				onNext: {
+						print($0)
+				},
+				onCompleted: {
+						print("Completed!")
+				}
+		)
 
 // start값부터 count수만큼 반복
 print("------range------")
 Observable.range(start: 1, count: 9)
-    .subscribe(onNext: {
-        print("2*\($0)=\(2*$0)")
-    })
+		.subscribe(onNext: {
+				print("2*\($0)=\(2*$0)")
+		})
 
 
 // 구독했던것을 종료함
@@ -108,10 +108,10 @@ var whatIsDispose = "구독됬던 Observable을 반대로 종료하여 취소하
 // 현재 코드는 3가지의 요소가 있어서 사용할 필요가 없지만 무한요소가 들어간다면 dipose를 호출해야 completed됨
 print("------dispose------")
 Observable.of(1,2,3)
-    .subscribe {
-        print($0)
-    }
-    .dispose()
+		.subscribe {
+				print($0)
+		}
+		.dispose()
 
 // 각 구독에 대해서 일일이 하나씩 구독해제가아닌 묶어서 한번에 헤제하도록 Bag을 만들어 사용
 // 구독해제를 하지 않으면 메모리 누수가 일어남
@@ -119,60 +119,60 @@ print("------disposeBag------")
 let disposeBag = DisposeBag()
 
 Observable.of(1,2,3)
-    .subscribe {
-        print($0)
-    }
-    .disposed(by: disposeBag)
+		.subscribe {
+				print($0)
+		}
+		.disposed(by: disposeBag)
 
 // create는 @escaping클로져이다
 print("------create1------")
 Observable.create { observer -> Disposable in
-    observer.onNext(1)
-    observer.onCompleted()
-    observer.onNext(2) // onNext(2)난 이미 위에서 종료되었기 때문에 방출되지 않음
-    return Disposables.create()
+		observer.onNext(1)
+		observer.onCompleted()
+		observer.onNext(2) // onNext(2)난 이미 위에서 종료되었기 때문에 방출되지 않음
+		return Disposables.create()
 }
 .subscribe{
-    print($0)
+		print($0)
 }
 .disposed(by: disposeBag)
 
 print("------create2------")
 enum MyError: Error {
-    case anError
+		case anError
 }
 
 // observer로 받고 return을 Disposable로 해주는 타입
 Observable<Int>.create { observer -> Disposable in
-    observer.onNext(1)
-    observer.onError(MyError.anError)
-    observer.onCompleted()
-    observer.onNext(2)
-    return Disposables.create()
+		observer.onNext(1)
+		observer.onError(MyError.anError)
+		observer.onCompleted()
+		observer.onNext(2)
+		return Disposables.create()
 }
 .subscribe(
-    onNext: {
-        print($0)
-    },
-    onError: {
-        print($0.localizedDescription)
-    },
-    onCompleted: {
-        print("disposed")
-    },
-    onDisposed: {
-        
-    }
+		onNext: {
+				print($0)
+		},
+		onError: {
+				print($0.localizedDescription)
+		},
+		onCompleted: {
+				print("disposed")
+		},
+		onDisposed: {
+				
+		}
 )
 .disposed(by: disposeBag)
 
 // Observable을 감싸는 Observable -> Observable내에 Observable생성가능
 print("------deferred1------")
 Observable.deferred {
-    Observable.of(1,2,3)
+		Observable.of(1,2,3)
 }
 .subscribe {
-    print($0)
+		print($0)
 }
 .disposed(by: disposeBag)
 
@@ -183,19 +183,18 @@ print("------deferred2------")
 var 뒤집기: Bool = false
 
 let factory: Observable<String> = Observable.deferred {
-    뒤집기 = !뒤집기
-    
-    if 뒤집기 {
-        return Observable.of("가위")
-    } else {
-        return Observable.of("주먹")
-    }
+		뒤집기 = !뒤집기
+		
+		if 뒤집기 {
+				return Observable.of("가위")
+		} else {
+				return Observable.of("주먹")
+		}
 }
 
 for _ in 0...3 {
-    factory.subscribe(onNext: {
-        print($0)
-    })
-    .disposed(by: disposeBag)
+		factory.subscribe(onNext: {
+				print($0)
+		})
+		.disposed(by: disposeBag)
 }
-
