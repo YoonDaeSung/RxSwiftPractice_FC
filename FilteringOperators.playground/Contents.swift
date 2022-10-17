@@ -20,7 +20,7 @@ let 취침모드 = PublishSubject<String>()
 
 취침모드.onCompleted()
 
-print("------ElementAt------")
+print("------elementAt------")
 let 두번울면깨는사람 = PublishSubject<String>()
 
 두번울면깨는사람
@@ -36,7 +36,7 @@ let 두번울면깨는사람 = PublishSubject<String>()
 두번울면깨는사람.onNext("🔔")
 
 // 필터를 넣어 짝수만 고르고싶다 등의 필터링 기능
-print("------Filter------")
+print("------filter------")
 Observable.from([1,2,3,4,5,6,7,8])
     .filter { $0 % 2 == 0 } // 조건부를 걸어 필터함
     .subscribe(onNext: {
@@ -45,7 +45,7 @@ Observable.from([1,2,3,4,5,6,7,8])
     .disposed(by: disposeBag)
 
 // skip에 5을 넣을경우 5까지 무시하고 6부터 방출함
-print("------Skip------")
+print("------skip------")
 Observable.of(1,2,3,4,5,6)
     .skip(5)
     .subscribe(onNext: {
@@ -56,7 +56,7 @@ Observable.of(1,2,3,4,5,6)
 // 모든연산을 필터하는 Filter연산자와달리 처음부터 스킵하다가 조건 로직이 False가 될때부터 방출함
 // Filter와 반대되는 성질
 // 동메달이 아니면 스킵하다가 동메달 만나는순간 방출
-print("------SkipWhile------")
+print("------skipWhile------")
 Observable.of("🥇", "🥈", "🥉", "🏊🏾‍♂️", "🏊🏻‍♀️")
     .skip(while: {
         $0 != "🥉"
@@ -68,7 +68,7 @@ Observable.of("🥇", "🥈", "🥉", "🏊🏾‍♂️", "🏊🏻‍♀️")
 
 // 특정구간까지 skip하고 지정된 이벤트가 방출한다음부터 skip헤제
 // 특정 Observable이 onNext되기 전까지 skip함
-print("------SkipUntil------")
+print("------skipUntil------")
 let customer = PublishSubject<String>()
 let openTime = PublishSubject<String>()
 
@@ -137,3 +137,11 @@ courseOpen.onNext("2수강신청 가능하다!")
 courseClose.onNext("수강종료")
 courseOpen.onNext("지금이라도 수강신청 가능한가?")
 
+// '연달아서' 같은값이 나올때 중복되는 값을 막아주는 역할을 함
+print("------distinctUntilChanged------")
+Observable.of("앵무새","저는","저는","앵무새","앵무새","앵무새","앵무새","입니다","입니다","입니다")
+    .distinctUntilChanged()
+    .subscribe( onNext: {
+        print($0)
+    })
+    .disposed(by: disposeBag)

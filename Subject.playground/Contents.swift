@@ -3,7 +3,7 @@ import RxSwift
 let disposeBag = DisposeBag()
 
 // publishSubject 구독하기 이전에 발생한 이벤트는 방출하지않음
-print("------PublichSubject------")
+print("------publichSubject------")
 let publishSubject = PublishSubject<String>()
 
 publishSubject.onNext("1여러분 안녕?")
@@ -41,7 +41,7 @@ publishSubject.onNext("6찍힐까요?")
 
 // behaviorSubject는 반드시 초기값을 갖고 시작함
 // 구독한 시점의 직전 이벤트도 방출함 (publishSubject는 구독한 시점부터 이벤트 방출)
-print("------BehaviorSubject------")
+print("------behaviorSubject------")
 enum SubjectError: Error {
     case error1
 }
@@ -68,7 +68,7 @@ print(haviorValue) // 에러를 방출하여 종료되지 않았다면 가장 �
 
 // creata로 생성하여 몇개의 이벤트 buffer(임시 저장공간)를 가질것인지 선언가능
 // buffer사이즈에 따라 onNext를 방출 1일경우 '3어렵지만' 의 마지막 이벤트만 방출
-print("------ReplaySubject------")
+print("------replaySubject------")
 let replaySubject = ReplaySubject<String>.create(bufferSize: 3)
 
 replaySubject.onNext("1여러분")
